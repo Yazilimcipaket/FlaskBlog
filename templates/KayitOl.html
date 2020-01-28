@@ -1,0 +1,19 @@
+{% extends "Layout.html" %}
+{% block title %}
+    Kayıt Ol
+{% endblock title %}
+{% block body %}
+{% from "inculudes/formhelpers.html" import render_field %}
+    <h1 class="text-center">Kayıt Ol</h1>
+    <hr/>
+    <form method="post">
+  <dl>
+    {{ render_field(form.Adi,class="form-control") }}
+    {{ render_field(form.KullaniciAdi,class="form-control") }}
+    {{ render_field(form.Email,class="form-control") }}
+    {{ render_field(form.Parola,class="form-control") }}
+    {{ render_field(form.Dogrula,class="form-control") }}
+  </dl>
+  <button type="subbmit" class="btn btn-primary">Kaydet</button>
+</form>
+{% endblock body %}

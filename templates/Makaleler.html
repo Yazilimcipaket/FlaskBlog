@@ -1,0 +1,27 @@
+{% extends "Layout.html" %}
+{% block title %}
+    Makaleler
+{% endblock title %}
+{% block body %}
+    <h3>Makaleler</h3>
+    <hr/>
+    <form action="/Ara" method="Post">
+        <div class="input-group">
+            <input type="text" class="form-control" name="deger" placeholder="Makale Ara">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i>ara</button>
+            </div>
+        </div>
+    </form>
+    <br/>   
+    {% if makaleler %}
+        <ul class="list-group">
+        {% for makale in makaleler %}
+            <li class="list-group-item"><a href="Makale/{{makale.id}}">{{makale.Baslik}}</a></li>
+        {% endfor %}
+        
+        </ul>
+    {% else %}
+        <div class="alert alert-danger">Bu Blogda Henüz Makale Bulunmuyor</div>
+    {% endif %}
+{% endblock  %}

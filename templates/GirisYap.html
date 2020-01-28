@@ -1,0 +1,13 @@
+{% extends "Layout.html" %}
+{% block body %}
+{% from "inculudes/formhelpers.html" import render_field %}
+    <h3>Giris Yap</h3>
+    <hr>
+     <form method="post">
+  <dl>
+    {{ render_field(form.KullaniciAdi) }}
+    {{ render_field(form.Parola) }}
+  </dl>
+  <button type="subbmit" class="btn btn-primary">Giris Yap</button>
+</form>
+{% endblock body %}

@@ -1,0 +1,13 @@
+{% extends "Layout.html" %}
+{% block body %}
+{% if makale %}
+    <h4>{{makale.Baslik}}</h4>
+    <hr/>
+    Yazar:  {{makale.Yazar}}<hr/>
+    Oluşturma Tarihi: {{makale.Olusturma_tarihi}}<hr/>
+    İçerik:<hr/>
+    {{makale.Icerik}}
+{% else %}
+ <div class="alert alert-warning">makale silinmiş olabilir</div>
+{% endif %}
+{% endblock body %}
